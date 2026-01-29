@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div id="emoji-layer" class="bg-elements"></div>
+
+    <div id="main-content" class="phone-container hidden">
+        <div id="screen0" class="screen active">
+            <div class="card glass">
+                <img src="pic1.jpeg" alt="Welcome" class="intro-img-large floating-motion">
+                <h3 class="glow-text">Hey Bacha! ❤️</h3>
+                <p class="slogan">The magic starts here...</p>
+                <button class="btn-primary" onclick="nextScreen(1)">Start ✨</button>
+            </div>
+        </div>
+
+        <div id="screen1" class="screen">
+            <div class="card glass">
+                <div class="video-box-mid">
+                    <video id="v1" src="vid1.mp4" loop playsinline muted></video>
+                </div>
+                <p class="slogan">Let the celebration begin! 🎉</p>
+                <button class="btn-primary" onclick="nextScreen(2)">Next →</button>
+            </div>
+        </div>
+
+        <div id="screen2" class="screen">
+            <div class="card glass">
+                <img src="https://media.tenor.com/2863690623136204031/tenor.gif" class="character-small">
+                <div class="vid-small-box">
+                    <video id="v2" src="vid2.mp4" loop playsinline></video>
+                </div>
+                <p class="slogan">A queen was born today! 👑</p>
+                <button class="btn-primary" onclick="nextScreen(3)">Continue →</button>
+            </div>
+        </div>
+
+        <div id="screen3" class="screen">
+            <div class="card glass">
+                <div class="cake-area">
+                    <div id="candle" class="candle hidden"><div class="flame hidden"></div></div>
+                    <img id="cake-img" src="https://cdn-icons-png.flaticon.com/512/2682/2682340.png" class="cake-main">
+                </div>
+                <h2 id="cake-status">Make a Wish! 🎂</h2>
+                <button id="cake-action-btn" class="btn-primary" onclick="handleCake()">Decorate Cake</button>
+            </div>
+        </div>
+
+        <div id="screen4" class="screen">
+            <div class="card glass">
+                <div class="video-box-large">
+                    <video id="v3" src="vid3.mp4" loop playsinline></video>
+                </div>
+                <p class="slogan">Sweetness just for you! 🍭</p>
+                <button class="btn-primary" onclick="nextScreen(5)">Pop Balloons 🎈</button>
+            </div>
+        </div>
+
+        <div id="screen5" class="screen">
+            <div class="card glass">
+                <h3>Pop for a secret! 🎈</h3>
+                <div class="balloon-container">
+                    <div class="balloon-pop" onclick="pop(this)">🎈</div>
+                    <div class="balloon-pop" onclick="pop(this)">🎈</div>
+                    <div class="balloon-pop" onclick="pop(this)">🎈</div>
+                    <div class="balloon-pop" onclick="pop(this)">🎈</div>
+                </div>
+                <div id="balloon-msg" class="msg-box"></div>
+                <img id="pop-photo" src="pic2.jpeg" class="hidden memory-photo-tall">
+                <button id="ball-next" class="hidden btn-primary" onclick="nextScreen(6)">See Memories →</button>
+            </div>
+        </div>
+
+        <div id="screen6" class="screen">
+            <div class="card glass">
+                <div class="video-box-large">
+                    <video id="v4" src="vid4a.mp4" loop playsinline></video>
+                </div>
+                <p class="slogan">Forever grateful! 💞</p>
+                <button class="btn-primary" onclick="nextScreen(7)">One More... ✨</button>
+            </div>
+        </div>
+
+        <div id="screen7" class="screen">
+            <div class="card glass">
+                <div class="video-box-large">
+                    <video id="v5" src="vid5.mp4" loop playsinline></video>
+                </div>
+                <p class="slogan">To many more years! 🌸</p>
+                <button class="btn-primary" onclick="nextScreen(8)">Final Message 💌</button>
+            </div>
+        </div>
+
+        <div id="screen8" class="screen">
+            <div class="card glass">
+                <p class="final-msg">Happy Birthday, Cutiepie! ❤️<br><br>You deserve all the happiness in the world.</p>
+                <button class="btn-primary" onclick="location.reload()">Replay ↻</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

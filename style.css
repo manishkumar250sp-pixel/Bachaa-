@@ -1,0 +1,66 @@
+:root {
+    --bg-grad: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 30%, #a1c4fd 70%, #c2e9fb 100%);
+    --accent: #d81b60;
+}
+
+body { margin: 0; background: #121212; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; font-family: sans-serif; }
+
+.phone-container { 
+    width: 100%; max-width: 360px; height: 95vh; max-height: 680px; 
+    background: var(--bg-grad); position: relative; overflow: hidden; 
+    border-radius: 40px; border: 8px solid #222; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.screen { 
+    position: absolute; width: 100%; height: 100%; display: flex; 
+    flex-direction: column; justify-content: center; align-items: center; 
+    padding: 0 25px; box-sizing: border-box; text-align: center; 
+    opacity: 0; transition: 0.5s ease; pointer-events: none; z-index: 5;
+}
+.screen.active { opacity: 1; pointer-events: all; }
+
+/* Sub-frame Glass Card */
+.glass { 
+    background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(12px); 
+    border-radius: 30px; padding: 25px 20px; width: 100%; 
+    min-height: 480px; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Sizing Controls */
+.intro-img-large { width: 180px; height: 180px; object-fit: cover; border-radius: 20px; border: 4px solid white; margin-bottom: 15px; }
+
+.video-box-mid { width: 100%; height: 280px; border-radius: 15px; border: 4px solid white; overflow: hidden; }
+.video-box-mid video { width: 100%; height: 100%; object-fit: cover; }
+
+/* Increased Video Height for Slides 3(v3), 6, and 7 */
+.video-box-large { width: 100%; height: 340px; border-radius: 15px; border: 4px solid white; overflow: hidden; margin-bottom: 10px; }
+.video-box-large video { width: 100%; height: 100%; object-fit: cover; }
+
+/* Increased Photo Height for Slide 5 */
+.memory-photo-tall { width: 140px; height: 190px; object-fit: cover; border-radius: 15px; border: 3px solid white; margin-top: 10px; }
+
+.vid-small-box { width: 100px; height: 140px; border-radius: 10px; overflow: hidden; border: 2px solid white; }
+.vid-small-box video { width: 100%; height: 100%; object-fit: cover; }
+
+/* Interactive Cake area */
+.cake-area { position: relative; width: 100%; height: 180px; display: flex; justify-content: center; align-items: flex-end; }
+.cake-main { width: 130px; z-index: 1; }
+.candle { position: absolute; bottom: 80px; width: 10px; height: 40px; background: #fff176; z-index: 10; border-radius: 2px; }
+.flame { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 14px; height: 22px; background: orange; border-radius: 50%; animation: flicker 0.1s infinite alternate; }
+
+/* Animations */
+@keyframes flicker { to { opacity: 0.8; transform: translateX(-50%) scale(1.1); } }
+.floating-motion { animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* UI */
+.btn-primary { background: var(--accent); color: white; border: none; padding: 12px 24px; border-radius: 50px; font-weight: bold; margin-top: 15px; cursor: pointer; }
+.slogan { font-size: 15px; font-weight: bold; color: var(--accent); margin-top: 8px; font-style: italic; }
+.final-msg { font-size: 20px; color: var(--accent); font-weight: bold; }
+.hidden { display: none !important; }
+
+/* Background Emojis */
+.bg-elements { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.floating-item { position: absolute; font-size: 24px; animation: floatUp 6s linear infinite; opacity: 0.45; }
+@keyframes floatUp { 0% { transform: translateY(110%) rotate(0deg); } 100% { transform: translateY(-10%) rotate(360deg); } }
